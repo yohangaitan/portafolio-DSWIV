@@ -1,0 +1,1469 @@
+/* Variables CSS para el tema del video (Negro y Cian) */
+:root {
+    --color-fondo: #000000; /* Negro puro */
+    --color-tarjeta: #131212; /* Negro muy oscuro para tarjetas/secciones */
+    --color-texto-claro: #ffffff; /* Blanco para texto */
+    --color-acento: #22d4fd; /* Cian/Verde brillante como en el video */
+    --color-acento-claro: #54e0ff;
+    --fuente-principal: 'Roboto', sans-serif;
+    
+    --sombra-glow: 0 0 10px var(--color-acento-claro), 0 0 20px rgba(0, 224, 165, 0.4);
+}
+
+/* Base y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--fuente-principal);
+    transition: all 0.3s ease; /* Transiciones suaves para los efectos */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background: var(--color-fondo);
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/*ESTILO PARA SECCION HABILIDADES
+/* --- Contenedor de la Cuadrícula de Servicios/Habilidades --- */
+.habilidades-grid-servicios {
+    display: grid;
+    /* 3 columnas en escritorio */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+    max-width: 1200px; /* Un poco más de ancho para las 3 columnas */
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* --- Estilo de cada Tarjeta de Habilidad --- */
+.habilidad-tarjeta {
+    background-color: var(--color-tarjeta);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    
+    /* Borde inicial del glow sutil */
+    border: 1px solid rgba(var(--color-acento-rgb), 0.2);
+    box-shadow: 0 0 1rem rgba(var(--color-acento-rgb), 0.1);
+    
+    transition: all 0.4s ease-in-out;
+}
+
+/* Íconos (Devicon) */
+.habilidad-tarjeta i {
+    font-size: 5rem; /* Icono más grande */
+    margin-bottom: 0.8rem;
+    line-height: 1; /* Asegura que el ícono esté bien centrado */
+}
+
+/* Título de la Habilidad */
+.habilidad-tarjeta h3 {
+    font-size: 1.5rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción */
+.habilidad-tarjeta p {
+    color: var(--color-texto-secundario);
+    font-size: 1rem;
+}
+
+/* --- Efecto Hover (Elevación y Glow Intenso) --- */
+.habilidad-tarjeta:hover {
+    /* Elevación */
+    transform: translateY(-10px); 
+    
+    /* Intensificar el Glow con tu color de acento */
+    border-color: var(--color-acento);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 2rem var(--color-acento);
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+    .habilidades-grid-servicios {
+        /* Cambia a 1 columna en dispositivos más pequeños */
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* --- ESTILO PARA EL NOMBRE EN LA SECCIÓN DE INICIO --- */
+.inicio-contenido .greeting {
+    font-size: 1.5rem; /* Ajusta el tamaño si es necesario */
+    color: var(--color-texto-claro); /* Color base del "Hey, Soy" (Blanco) */
+}
+
+.inicio-contenido .greeting .nombre-acento {
+    /* CLAVE: Aplica el color Cian/Azul brillante a tu nombre */
+    color: var(--color-acento); 
+    font-weight: 700; /* Opcional: para que resalte más */
+}
+
+/* --- Navegación (Header) --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 9%;
+    background: var(--color-fondo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* Pseudo-elemento para la línea animada */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Inicialmente 0 de ancho */
+    height: 3px;
+    background-color: var(--color-acento);
+    transition: width 0.3s ease-out; /* Transición para que crezca */
+}
+
+/* Efecto Hover: La línea crece de izquierda a derecha */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Clase Activa: Asegura que la línea se mantenga al 100% */
+.navbar a.active-link::after {
+    width: 100%;
+}
+
+/* Clase temporal que JavaScript aplicará al elemento saliente */
+.navbar a.leaving::after {
+    /* Desactivamos la transición de 'width' y la reemplazamos por 'transform' */
+    transition: transform 0.3s ease-in; 
+    
+    /* Movemos el pseudo-elemento fuera del contenedor (a la izquierda) */
+    transform: translateX(-100%);
+    
+    /* Mantenemos el width al 100% mientras se mueve para simular que se encoge */
+    width: 100%;
+}
+
+/* --- ESTILO DE LOGO / NOMBRE DE MARCA --- */
+/* 1. Estilo General del Logo (Yohan) */
+.logo {
+    /* (Mantiene el color por defecto, probablemente var(--color-texto-claro) o blanco) */
+    font-size: 1.7rem;
+    color: var(--color-texto-claro); 
+    font-weight: 700;
+    cursor: default;
+}
+
+/* 2. Color de Acende (Gaitan) */
+.color-marca {
+    /* Usa la variable de color de acento, que es el azul/celeste brillante */
+    color: var(--color-acento); 
+}
+
+.navbar a {
+    font-size: 1.05rem;
+    color: var(--color-texto-claro);
+    font-weight: 500;
+    margin-left: 2.5rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar a:hover,
+.navbar a.active-link {
+    color: var(--color-acento);
+}
+
+.navbar a.active-link {
+    color: var(--color-acento);
+}
+
+.menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none;
+    color: var(--color-acento);
+}
+
+/* --- Estilo del Contenedor de Redes Sociales en el Inicio --- */
+.social-media-inicio {
+    margin-top: 2rem; /* Espacio superior para separarlo de los botones */
+    display: flex; /* Asegura que los enlaces estén en fila */
+    align-items: center; 
+}
+
+/* --- Estilo Base de los Íconos --- */
+.social-media-inicio a {
+    /* Color inicial: Blanco/Texto Claro */
+    color: var(--color-texto-claro); 
+    font-size: 1.8rem; /* Tamaño de los íconos */
+    
+    /* Espacio entre íconos. Ajusta el margen según tu layout. */
+    margin-right: 1.5rem; 
+    
+    /* Transición suave para el cambio de color y transformación */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* --- Efecto Hover: Cambiar a Color de Acento (Azul/Cian) y Escalar --- */
+.social-media-inicio a:hover {
+    /*  CLAVE: El ícono se vuelve AZUL/CIAN */
+    color: var(--color-acento); 
+    
+    /* Pequeño pop/elevación para mejor interactividad */
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* --- Estilos Comunes de Secciones y Botones --- */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-seccion {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    color: var(--color-texto-claro);
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-acento);
+}
+
+/* --- Estilo Base del Botón Principal (Mantengo tu estilo original) --- */
+/* --- Estilo Base del Botón Principal (.btn) --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    
+    /* Estado Normal: Fondo Azul, Texto Negro/Oscuro */
+    background: var(--color-acento);
+    border: 2px solid var(--color-acento);
+    color: var(--color-fondo); /* Asumo que quieres que el texto del botón azul sea oscuro */
+    
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    vertical-align: middle;
+    
+    /* Transición para que el cambio de color sea suave */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* --- Efecto Hover (Intercambio de Colores) --- */
+.btn:hover {
+    /*  Fondo se vuelve Negro/Oscuro */
+    background: var(--color-fondo); 
+    
+    /*  El texto se vuelve Azul/Cian */
+    color: var(--color-acento); 
+    
+    /*  El borde se mantiene Azul/Cian */
+    border-color: var(--color-acento);
+    
+    /* Mantiene el glow */
+    box-shadow: var(--sombra-glow);
+}
+
+/* --- Estilo del Botón Secundario (Contáctame) con Animación de Relleno --- */
+.btn-secundario {
+    /* Mantiene tus estilos base */
+    background: transparent;
+    color: var(--color-acento);
+    margin-left: 1rem;
+    box-shadow: none;
+    
+    /* Propiedades necesarias para la animación de relleno */
+    position: relative;
+    z-index: 1; 
+    overflow: hidden; /* Oculta el relleno antes de que se expanda */
+    
+    /* Asegura que la transición afecte solo al texto y al borde (no al background) */
+    transition: color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s;
+}
+
+/* --- Pseudo-Elemento que Crea el Relleno Azul --- */
+.btn-secundario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Color de relleno */
+    background: var(--color-acento); 
+    
+    /* La transformación inicial (relleno oculto, ancho 0) */
+    transform-origin: left; /* La animación empieza desde la izquierda */
+    transform: scaleX(0); /* Inicialmente oculto (ancho 0) */
+    
+    transition: transform 0.4s ease-out; /* Transición suave de relleno */
+    z-index: -1; /* Lo pone detrás del texto del botón */
+}
+
+/* --- Efecto Hover: Relleno y Texto Cambian --- */
+.btn-secundario:hover {
+    /* Tu estilo original de hover */
+    /* background: rgba(0, 224, 165, 0.1); */ /* Lo desactivo porque el relleno lo cubrirá */
+    box-shadow: var(--sombra-glow);
+    
+    /* El texto cambia a color oscuro/fondo */
+    color: var(--color-fondo);
+}
+
+.btn-secundario:hover::before {
+    /* Al pasar el puntero, se expande de izquierda a derecha */
+    transform: scaleX(1); 
+}
+
+/* --- SECCIÓN INICIO (HERO) --- */
+.inicio {
+    padding-top: 10rem;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: 4rem;
+}
+
+/* Estado inicial invisible para la animación de carga (solo al contenido) */
+.inicio-contenido {
+    max-width: 50%;
+    
+}
+
+.greeting {
+    font-size: 1.1rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 0.5rem;
+}
+
+.inicio-contenido h1 {
+    font-size: 3.5rem;
+    /* 🚨 CLAVE A: Forzar line-height a 1.0. Esto elimina el espacio vertical extra. */
+    line-height: 1.0; 
+    margin-bottom: 1rem;
+}
+
+.inicio-contenido h1 span {
+    color: var(--color-acento);
+}
+
+.descripcion-hero {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.social-media-hero {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-media-hero a {
+    font-size: 1.5rem;
+    color: var(--color-texto-claro);
+    transition: color 0.3s;
+}
+
+.social-media-hero a:hover {
+    color: var(--color-acento);
+    transform: translateY(-3px);
+}
+
+.inicio-imagen {
+    position: relative;
+    width: 355px; 
+    height: 355px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    flex-shrink: 0;
+    /* El Glow inicial y la Transición para el Glow */
+    box-shadow: 0 0 2rem var(--color-acento-claro), inset 0 0 2rem var(--color-acento);
+    transition: 0.5s ease; 
+    min-width: 355px;
+    /* Aplicar la animación de flotación (translateY) al contenedor */
+    animation: flotar 4s ease-in-out infinite; 
+}
+
+.inicio-imagen img {
+    /* La imagen debe ser del 100% del contenedor */
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    border-radius: 50%;
+    /* Poner la transición aquí para que el zoom de la imagen sea suave */
+    transition: 0.5s ease;
+}
+
+/* EFECTO HOVER: Zoom del círculo completo, manteniendo la flotación */
+.inicio-imagen:hover {
+    /* Intensifica el glow al hacer hover */
+    box-shadow: 0 0 3rem var(--color-acento-claro), inset 0 0 3rem var(--color-acento);
+}
+
+/* Aplicar el zoom a la imagen interna al hacer hover sobre el contenedor */
+.inicio-imagen:hover img {
+    transform: scale(1.1); /* Puedes usar 1.05, pero 1.1 se nota más en la imagen interna */
+}
+
+
+/* AGREGAR ESTO: Contenedor de Botones (Estilo de Escritorio) */
+.caja-botones {
+    display: flex; /* Los botones se alinean en fila */
+    gap: 1.5rem; /* Espacio entre los botones */
+    margin-top: 3rem; 
+    /* 3rem para mantener la separación que hay en .social-media-hero */
+}
+
+
+/* --- Keyframes de Animación --- */
+/* Animación de Flotación (Arriba y Abajo) para la imagen de perfil */
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Sube 20px */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animación de Fade-In (Reutilizable) */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación de Slide Up (para el contenido del hero) */
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para el Typing Cursor */
+.texto-dinamico {
+    display: inline-block; 
+    border-right: 3px solid var(--color-acento);
+    padding-right: 5px;
+    white-space: normal; 
+    animation: blinkCursor 0.75s step-end infinite;
+    /* Controla la altura del elemento para que solo envuelva el texto */
+    line-height: 1.0; 
+    /* Aseguramos que el cursor herede el tamaño gigante del h1 */
+    font-size: inherit;
+    vertical-align: text-bottom; /* Opcional, pero ayuda a alinear mejor */
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: var(--color-acento) }
+}
+
+
+/* --- SECCIÓN SOBRE MÍ --- */
+.sobre-mi {
+    background: var(--color-fondo);
+    padding: 10rem 9% 5rem;
+}
+
+.fila-sobre-mi {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    max-width: 1200px;
+}
+
+.sobre-mi-imagen {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    background: var(--color-tarjeta);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transition: all 0.5s ease-in-out;
+}
+
+/* EFECTO HOVER: Zoom en la imagen de la sección Sobre Mí */
+.sobre-mi-imagen:hover {
+    transform: scale(1.03); /* Agrandar el contenedor un 3% */
+    box-shadow: var(--sombra-glow);
+}
+
+.sobre-mi-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.contenido-sobre-mi {
+    text-align: left;
+    max-width: 50%;
+}
+
+.contenido-sobre-mi h3 {
+    font-size: 2rem;
+    color: var(--color-acento);
+    margin-bottom: 1.5rem;
+}
+
+.contenido-sobre-mi p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.cita {
+    font-style: italic;
+    color: var(--color-acento);
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--color-acento);
+    padding-left: 15px;
+}
+
+/* --- Estilo para la frase destacada en la sección Sobre Mí --- */
+.frase-acento {
+    color: var(--color-acento); /* Aplica el color azul/cian */
+    font-style: italic; /* Opcional: para destacarla como una cita */
+    font-weight: 500;
+}
+
+
+/* --- SECCIÓN PROYECTOS --- */
+.proyectos {
+    background: var(--color-fondo);
+}
+
+.contenedor-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.caja-proyecto {
+    background: var(--color-tarjeta);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centra el texto */
+    transition: 0.5s ease;
+    /* Usamos Flexbox para alinear el contenido */
+    display: flex;
+    flex-direction: column; /* Apila el título, descripción y botón */
+    /* Centra todo el contenido (incluyendo el botón) */
+    align-items: center;
+}
+
+.caja-proyecto:hover {
+    box-shadow: var(--sombra-glow);
+    transform: scale(1.02);
+}
+
+.imagen-proyecto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.caja-proyecto h3 {
+    padding: 1rem 1.5rem 0.5rem;
+    color: var(--color-acento);
+}
+
+.caja-proyecto p {
+    padding: 0 1.5rem 1rem;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Opcional: Asegura un margen inferior para el botón si se pega al fondo de la caja */
+.caja-proyecto .btn {
+    margin-top: 1.5rem; /* Espacio entre la descripción y el botón */
+}
+
+.btn-detalles {
+    display: inline-block;
+    color: var(--color-acento);
+    border: 1px solid var(--color-acento);
+    padding: 0.5rem 1.5rem;
+    margin: 0 1.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-detalles:hover {
+    background: var(--color-acento);
+    color: var(--color-fondo);
+}
+
+
+/* --- SECCIÓN CERTIFICADOS --- */
+/* --- Estilos de la Sección y Contenedor de la Cuadrícula --- */
+.certificados {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.contenedor-certificados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+    max-width: 1200px; 
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* --- Estilo de la Tarjeta Contenedora --- */
+.caja-certificado {
+    background-color: var(--color-tarjeta); 
+    border-radius: 1rem;
+    overflow: hidden; 
+    text-align: center;
+    
+    /* Borde y Sombra Inicial (Glow Sutil) */
+    border: 1px solid rgba(var(--color-acento-rgb), 0.2);
+    box-shadow: 0 0 1rem rgba(var(--color-acento-rgb), 0.1);
+    
+    transition: all 0.4s ease-in-out;
+}
+
+/* Contenedor de la Imagen */
+.certificado-visual {
+    overflow: hidden;
+    height: auto; 
+}
+
+/* Imagen del Certificado */
+.caja-certificado img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Información y Botón */
+.certificado-info {
+    padding: 1.5rem 1rem;
+}
+
+.certificado-info h3 {
+    font-size: 1.2rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 0.5rem;
+}
+
+.certificado-info p {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Estilo del Botón "Ver Credencial" (Estilo Outlined) --- */
+.boton-ver {
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+    background: transparent;
+    color: var(--color-acento);
+    border: 2px solid var(--color-acento); 
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* --- Efecto Hover de la Tarjeta (Glow y Zoom) --- */
+.caja-certificado:hover {
+    transform: translateY(-5px); 
+    border-color: var(--color-acento);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4), 0 0 1.5rem var(--color-acento);
+}
+
+.caja-certificado:hover img {
+    transform: scale(1.05); 
+}
+
+/* Hover del botón: relleno azul al pasar el puntero */
+.boton-ver:hover {
+    background: var(--color-acento);
+    color: var(--color-fondo);
+    box-shadow: var(--sombra-glow);
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+    .contenedor-certificados {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+/* --- SECCIÓN CONTACTO (AJUSTADA A DOS COLUMNAS) --- */
+.contacto {
+    background: var(--color-fondo);
+}
+
+/* Contenedor principal para organizar la información y el formulario */
+.contenedor-contacto-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alineación superior */
+    max-width: 1200px;
+    width: 100%;
+    gap: 4rem;
+    text-align: left;
+}
+
+/* Columna de Información (Izquierda) */
+.info-contacto-caja {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 40%;
+}
+
+.info-item {
+    background: var(--color-tarjeta);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.4s ease, transform 0.4s;
+    
+    /* Efecto Glow en el hover, similar a las tarjetas de servicio */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.info-item:hover {
+    box-shadow: var(--sombra-glow);
+    border-color: var(--color-acento);
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    margin-bottom: 0.5rem;
+}
+
+.info-item h4 {
+    font-size: 1.2rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 0.2rem;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    color: #bbb;
+}
+
+/* Redes Sociales en la sección de Contacto */
+.social-media-contacto {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-media-contacto a {
+    font-size: 1.8rem;
+    color: var(--color-texto-claro);
+}
+
+.social-media-contacto a:hover {
+    color: var(--color-acento);
+    transform: translateY(-3px);
+}
+
+/* Columna de Formulario (Derecha) */
+.formulario-contacto {
+    max-width: 60%;
+    width: 100%;
+    text-align: center;
+    background: var(--color-fondo); /* Color fondo para el formulario */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Reajustar campos de entrada para el nuevo diseño */
+.entrada-cajas {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.formulario-contacto input:not([type="submit"]),
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    color: var(--color-texto-claro);
+    font-size: 1rem;
+    margin-bottom: 1.5rem; /* Separación entre el asunto y el mensaje */
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 5px var(--color-acento);
+    outline: none;
+}
+
+.entrada-cajas input {
+    width: 50%; /* Asegura que Nombre y Email compartan la fila */
+    margin-bottom: 0; /* Ya no necesita margen inferior, lo da la caja padre */
+}
+
+.formulario-contacto textarea {
+    resize: vertical;
+    min-height: 150px;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Estilo del Botón de Envío: Azul Sólido con Relleno Negro en Hover --- */
+.btn-inverso {
+    /* Propiedades de layout y apariencia */
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid var(--color-acento); 
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    
+    /* Colores Iniciales (fondo azul, texto oscuro) */
+    background: var(--color-acento); 
+    color: var(--color-fondo); 
+    
+    /* Propiedades necesarias para la animación */
+    position: relative; 
+    z-index: 1; /* El texto y el borde están en la capa 1 */
+    overflow: hidden; /* Oculta el relleno negro fuera de los límites */
+    
+    /* Transiciones para el texto y el glow */
+    transition: color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+/* --- Pseudo-Elemento que Crea el Relleno Negro (Inverso) --- */
+.btn-inverso::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; 
+    height: 100%;
+    
+    /* Comienza con ancho cero */
+    width: 0; 
+    
+    /* Color de relleno es Negro/Fondo */
+    background: var(--color-fondo); 
+    
+    z-index: -1; /* Detrás del texto y borde */
+    
+    /* Transición sobre la propiedad 'width' para el movimiento de izquierda a derecha */
+    transition: width 0.4s ease-out; 
+}
+
+/* --- Efecto Hover: Relleno negro se expande y texto cambia de color --- */
+.btn-inverso:hover {
+    /* El texto cambia a color de acento (azul) */
+    color: var(--color-acento); 
+    
+    /* Mantiene el glow en hover (asumiendo que --sombra-glow está definida) */
+    box-shadow: var(--sombra-glow); 
+    
+    /* Opcional: Un pequeño zoom/pop */
+    transform: scale(1.02); 
+}
+
+.btn-inverso:hover::before {
+    /* El relleno negro se expande a ancho completo (100%) */
+    width: 100%; 
+}
+
+/* ======================================= */
+/* ESTILOS PARA MENSAJES DE DJANGO (ALERTAS) */
+/* ======================================= */
+
+.mensaje-container {
+    padding: 1rem 0;
+    max-width: 600px; /* Ancho para que se vea centrado */
+    margin: 0 auto 20px auto; /* Centrar y separar del título */
+    text-align: center;
+}
+
+.alerta {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para Mensaje de Éxito (cuando el correo se envía) */
+/* Asumo que --color-marca es tu color principal (cian/azul) */
+.alerta-success { 
+    background-color: var(--color-marca); 
+    color: #000; /* Texto oscuro para contraste */
+    border: 1px solid #00c4cc;
+}
+
+/* Estilo para Mensaje de Error (si falla el envío por alguna razón) */
+.alerta-error {
+    background-color: #e63946; /* Rojo de error */
+    color: #fff;
+    border: 1px solid #c91829;
+}
+
+
+/* --- FOOTER --- */
+.footer {
+    padding: 1.5rem 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 9%;
+    background: var(--color-fondo);
+    border-top: 1px solid #1a1a1a;
+}
+
+.social-media-footer a {
+    color: var(--color-texto-claro);
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.social-media-footer a:hover {
+    color: var(--color-acento);
+}
+
+
+/* --- Media Queries (Responsividad) --- */
+@media (max-width: 992px) {
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .inicio-contenido {
+        max-width: 100%;
+    }
+
+    
+    .fila-sobre-mi {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contenido-sobre-mi {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .sobre-mi-imagen {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .botones-sobre-mi {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    /* Para Contacto, pasar a una sola columna */
+    .contenedor-contacto-fila {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .info-contacto-caja,
+    .formulario-contacto {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .formulario-contacto {
+        padding: 1.5rem;
+    }
+    
+    .info-contacto-caja {
+        text-align: center;
+    }
+    
+    .social-media-contacto {
+        justify-content: center; /* Centrar iconos de redes sociales en móvil */
+        border-top: none;
+        padding-top: 0;
+    }
+    
+    .info-item {
+        text-align: center;
+    }
+}
+
+/* --- Ajustes para móviles y pantallas pequeñas (max-width: 768px) --- */
+@media (max-width: 768px) {
+    
+    .header {
+        /* Aseguramos que el header se ajuste correctamente al ancho y el padding */
+        padding: 1.5rem 5%;
+        width: 100%;
+        box-sizing: border-box; /* Incluye el padding en el ancho total */
+        
+        /* Aseguramos la separación del logo y el ícono */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Ícono del Menú (Hamburguesa) */
+    .menu-icon {
+        display: block; 
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: var(--color-acento);
+        z-index: 1001; 
+    }
+
+    /* Menú de Navegación (Desplegable) */
+    .navbar {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background: var(--color-tarjeta); 
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        display: none; 
+        flex-direction: column; 
+        text-align: center;
+        transition: 0.3s ease;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+    
+    .navbar.active {
+        display: flex;
+    }
+    
+    .navbar a {
+        display: block;
+        font-size: 1.2rem;
+        margin: 1.2rem 0; 
+        color: var(--color-texto-claro);
+        text-align: center;
+    }
+    
+    .navbar a::after {
+        display: none;
+    }
+    
+    /* Sección Inicio: Espaciado de Contenido (CORRECCIÓN FINAL) */
+    /* 1. Forzar margen debajo del párrafo (separación con los botones) */
+    .inicio-contenido p {
+        margin-bottom: 2.5rem !important; 
+    }
+    
+    /* 2. Contenedor de Botones (CLASE CORREGIDA) */
+.botones-hero {
+    display: flex;
+    flex-direction: column; /* Apila los botones verticalmente */
+    margin: 0; 
+    gap: 0; 
+    align-items: center; /* ESTO CENTRA LOS BOTONES HORIZONTALMENTE */
+}
+
+/* 3. Espacio entre los dos botones */
+.botones-hero .btn {
+    width: 90%; 
+    max-width: 300px;
+    text-align: center; 
+    /* ESTO DA ESPACIO VERTICAL (0.75rem) Y QUITA EL MARGEN LATERAL (0) */
+    margin: 0.75rem auto !important; 
+}
+    
+    /* 4. Forzar margen encima de los íconos sociales (separación con los botones) */
+    .iconos-sociales {
+        margin-top: 2rem !important; 
+        text-align: center;
+    }
+    
+    /* Habilidades */
+    .tarjeta-habilidad {
+        min-width: 280px; 
+    }
+
+    /* Opcional: Contener el overflow en la sección de inicio */
+    .inicio {
+        overflow-x: hidden;
+    }
+    
+    /* Contacto */
+    .entrada-cajas {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .entrada-cajas input {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* para el carrusel */
+/* --- SECCIÓN HABILIDADES (CARRUSEL AUTOMÁTICO) --- */
+.habilidades {
+    background: var(--color-fondo);
+}
+
+.contenedor-carrusel {
+    max-width: 1200px;
+    width: 100%;
+    /* Oculta las tarjetas que salen del área de visualización */
+    overflow-x: hidden; 
+}
+
+.carrusel-habilidades {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+    
+    /* Desactivar cualquier scroll manual */
+    overflow-x: hidden; 
+    scroll-snap-type: none;
+    
+    /* Configuración para la animación */
+    width: fit-content; 
+    /* Duración ajustada: 40s (linear) para que sea suave y constante. */
+    animation: carruselDesplazamiento 40s linear infinite;
+}
+
+/* Pausar la animación al pasar el ratón */
+.carrusel-habilidades:hover {
+    animation-play-state: paused;
+}
+
+/* Estilo de las tarjetas individuales */
+.tarjeta-habilidad {
+    min-width: 300px;
+    background: var(--color-tarjeta);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: box-shadow 0.4s ease, transform 0.4s;
+    flex-shrink: 0; /* IMPEDIR que las tarjetas se encojan */
+}
+
+/* Efecto Glow en hover */
+.tarjeta-habilidad:hover {
+    box-shadow: var(--sombra-glow);
+    border-color: var(--color-acento);
+    transform: translateY(-5px);
+}
+/* ... (Se mantienen los estilos h3, p, i, y nivel-habilidad) ... */
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .tarjeta-habilidad {
+        min-width: 250px; 
+    }
+}
+
+/*diseño responsive para dispositivos moviles*/
+/* --- Media Queries (Responsividad) --- */
+@media (max-width: 992px) {
+    /* Ajustes para tabletas y pantallas medianas */
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .inicio-contenido {
+        max-width: 100%;
+    }
+
+    /* Sobre Mí */
+    .fila-sobre-mi {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contenido-sobre-mi {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    /* Contacto */
+    .contenedor-contacto-fila {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .info-contacto-caja,
+    .formulario-contacto {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para móviles */
+    .header {
+        padding: 1.5rem 5%;
+    }
+
+    /* Menú Hamburguesa */
+    .navbar {
+        @media (max-width: 768px) {
+    
+    .header {
+        padding: 1.5rem 5%;
+    }
+
+    /* Ícono del Menú (Hamburguesa) */
+    .menu-icon {
+        display: block; /* Muestra el ícono solo en móvil */
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: var(--color-acento);
+        z-index: 1001; 
+    }
+
+    /* Menú de Navegación (Desplegable) */
+    .navbar {
+        /* Posicionamiento y Apariencia */
+        position: absolute;
+        top: 100%; /* Coloca el menú justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: var(--color-tarjeta); /* Color oscuro para el fondo del menú */
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        
+        /* 1. Ocultar por defecto */
+        display: none; 
+        
+        /* 2. Disposición vertical */
+        flex-direction: column; 
+        text-align: center;
+        
+        transition: 0.3s ease;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+    
+    /* Estado que se activa con JavaScript: Muestra el menú */
+    .navbar.active {
+        display: flex;
+    }
+    
+    /* Estilo de los enlaces en el menú desplegado */
+    .navbar a {
+        display: block;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: var(--color-texto-claro);
+    }
+    
+    /* Ocultar la línea de indicador activo en móvil */
+    .navbar a::after {
+        display: none;
+    }
+    
+    /* Habilidades */
+    .tarjeta-habilidad {
+        min-width: 280px; 
+    }
+    
+    /* Contacto */
+    .entrada-cajas {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .entrada-cajas input {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+    }
+    .menu-icon {
+        display: inline-block;
+    }
+    
+    /* Formulario */
+    .entrada-cajas {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .entrada-cajas input {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+
+
+
+
+/* /// POR AHORA LA SECCION DE PROYECTOS SERA SIN DEPLOYMENT /// */
+/* --- Estilos de la Sección y Contenedor de la Cuadrícula --- */
+.proyectos {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.contenedor-proyectos {
+    display: grid;
+    /* Cuadrícula de 3 columnas para Proyectos */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+    max-width: 1200px; 
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* --- Estilo de cada Tarjeta de Proyecto --- */
+.caja-proyecto {
+    /* Fondo Negro Claro */
+    background-color: var(--color-tarjeta); 
+    border-radius: 1rem;
+    overflow: hidden; 
+    text-align: center; 
+    padding-bottom: 1.5rem; /* Espacio para el botón y texto */
+    
+    /* Borde y Sombra Inicial (Glow Sutil) */
+    border: 1px solid rgba(var(--color-acento-rgb), 0.2);
+    box-shadow: 0 0 1rem rgba(var(--color-acento-rgb), 0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Imagen del Proyecto */
+.imagen-proyecto {
+    overflow: hidden;
+}
+
+.caja-proyecto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Título y Descripción */
+.caja-proyecto h3 {
+    font-size: 1.3rem;
+    color: var(--color-texto-claro);
+    padding: 0.8rem 1rem 0.5rem;
+    margin: 0;
+}
+
+.caja-proyecto p {
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+    padding: 0 1.5rem 1rem;
+}
+
+
+/* --- Estilo del Botón "Ver Detalles" (Outlined Azul) --- */
+.btn-detalles {
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+    background: transparent;
+    color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* --- Efecto Hover de la Tarjeta (Glow y Zoom) --- */
+.caja-proyecto:hover {
+    transform: translateY(-5px); /* Elevación sutil */
+    border-color: var(--color-acento);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4), 0 0 1.5rem var(--color-acento);
+}
+
+.caja-proyecto:hover img {
+    transform: scale(1.05); /* Zoom en la imagen */
+}
+
+/* Hover del botón: relleno azul al pasar el puntero */
+.btn-detalles:hover {
+    background: var(--color-acento);
+    color: var(--color-fondo);
+    box-shadow: var(--sombra-glow);
+}
+
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+    .contenedor-proyectos {
+        grid-template-columns: 1fr; 
+    }
+}

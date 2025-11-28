@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Yohan Gaitan</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#inicio" class="logo">Yohan<span class="color-marca">Gaitan</span></a>
+        <nav class="navbar">
+            <a href="#inicio" class="active-link">Inicio</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#certificados">Certificados</a> <a href="#contacto">Contacto</a>
+        </nav>
+        <div id="menu-icon" class="menu-icon">☰</div>
+    </header>
+
+    <section class="inicio" id="inicio">
+        <div class="inicio-contenido">
+            <p class="greeting">Hey, Soy <span class="nombre-acento">Yohan Gaitan</span></p>
+            <h1>Soy un <span class="texto-dinamico" id="texto-dinamico"></span></h1>
+            <p class="descripcion-hero">
+                Developer apasionado por crear soluciones digitales innovadoras. Con conocimiento en desarrollo web y diseño, siempre busco convertir tus ideas en realidad.
+            </p>
+            <div class="botones-hero">
+                <a href="#proyectos" class="btn">Ver Portafolio</a>
+                <a href="#contacto" class="btn btn-secundario">Contáctame</a>
+            </div>
+            
+            <div class="social-media-inicio"> 
+                <a href="https://github.com/yohangaitan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yojan-gaitan-08256a2b1/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/yohang23_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+    </div>
+
+        <div class="inicio-imagen">
+            <img src="assets/pinguino_programador.jpg" alt="Imagen de Perfil">
+        </div>
+    </section>
+
+    <section class="sobre-mi" id="sobre-mi">
+        <h2 class="titulo-seccion">Sobre Mí</h2>
+        <div class="fila-sobre-mi">
+            <div class="sobre-mi-imagen">
+                <img src="assets/pinguino_programador.jpg" alt="Imagen de Perfil" class="sobre-mi-glow">
+            </div>
+            <div class="contenido-sobre-mi">    
+                <h3>Hola, soy Yohan Gaitan</h3>
+                <p>Actualmente estudio Desarrollo y Gestión de Software en la Universidad Tecnológica de Panamá
+                    me gusta la tecnología, la programación y la inteligencia artificial.
+                Me interesa la investigación, el aprendizaje continuo y el desarrollo de soluciones tecnológicas. 
+                    Entusiasta de la Inteligencia Artificial y con la meta de especializarme en ella en el futuro.</p>
+                <p><span class="frase-acento">"El mundo no se detiene; siempre hay algo nuevo que aprender."</span></p>
+                <div class="botones-sobre-mi">
+                    <a href="#proyectos" class="btn btn-secundario">Ver Proyectos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="habilidades-seccion" id="habilidades">
+    <h2 class="titulo-seccion">Habilidades Principales</h2>
+    
+    <div class="habilidades-grid-servicios">
+        
+        <div class="habilidad-tarjeta">
+            <i class="devicon-html5-plain colored"></i>
+            <h3>HTML5</h3>
+            <p>Estructuración semántica del contenido, base de cualquier proyecto web moderno y accesible.</p>
+        </div>
+        
+        <div class="habilidad-tarjeta">
+            <i class="devicon-css3-plain colored"></i>
+            <h3>CSS3</h3>
+            <p>Diseño y estilo responsivo, animaciones atractivas y consistencia visual en todas las plataformas.</p>
+        </div>
+        
+        <div class="habilidad-tarjeta">
+            <i class="devicon-javascript-plain colored"></i>
+            <h3>Javascript</h3>
+            <p>Lógica del lado del cliente para crear interfaces interactivas, dinámicas y modernas.</p>
+        </div>
+        
+        <div class="habilidad-tarjeta">
+            <i class="devicon-python-plain colored"></i>
+            <h3>Python</h3>
+            <p>Lenguaje versátil para desarrollo backend, automatización de tareas y análisis de datos.</p>
+        </div>
+        
+        <div class="habilidad-tarjeta">
+            <i class="devicon-django-plain colored"></i>
+            <h3>Django</h3>
+            <p>Framework robusto para crear aplicaciones web escalables con una arquitectura MVC limpia y segura.</p>
+        </div>
+        
+        <div class="habilidad-tarjeta">
+            <i class="devicon-mysql-plain colored"></i>
+            <h3>MySQL</h3>
+            <p>Gestión eficiente de bases de datos relacionales, asegurando la integridad y la velocidad de los datos.</p>
+        </div>
+        
+    </div>
+</section> 
+
+
+<section class="proyectos" id="proyectos">
+    <h2 class="titulo-seccion">Proyectos</h2>
+    <div class="contenedor-proyectos">
+        
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/inv_1.png" alt="Project 1"> 
+            </div>
+            <h3>Investigacion1</h3>
+            <p>Utilizando la herramienta Internet investigue, desarrolle y sustente utilizando la técnica 
+            de micro clase. Utilice la misma para el desarrollo de cada uno de los puntos solicitados.</p>
+            <a href="proyectos/investigación 1 Software IV.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+        
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/taller_practico_1.png" alt="Project 2">
+            </div>
+            <h3>Taller Practico 1</h3>
+            <p>La empresa quiere que se programe un código (HTML) con un Menú principal que 
+permita inicializar una página web, que cuente con el contenido del 
+"Diplomado de Gobernabilidad, Gerencia Política y Gestión Pública".</p>
+            <a href="proyectos/TallerPractico1.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+        
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/lab_practico_1.png" alt="Project 3">
+            </div>
+            <h3>Laboratorio Practico 1</h3>
+            <p>Una empresa estatal (Municipio Distrito Alanje) contrata servicios profesionales para el 
+desarrollo de un proyecto.</p>
+            <a href="proyectos/Laboratorio Práctico N1.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+        
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/lab_2.png" alt="Project 4">
+            </div>
+            <h3>Laboratorio Practico 2</h3>
+            <p>La empresa estatal JC de Las Lomas requiere realizar un desarrollo web que 
+contenga todos los elementos necesarios de un prototipo desarrollado. 
+Queda a criterio la elección HTML nativo o ASP.</p>
+            <a href="proyectos/laboratorio 2 (1).pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+        
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/parcial1.png" alt="Project 5">
+            </div>
+            <h3>Parcial 1</h3>
+            <p>Una oficina ubicada en David-Chiriquí requiere instalar un servidor web (NGINX) 
+dentro de su centro de datos.</p>
+            <a href="proyectos/parcial1.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+        
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/ejercicio_prac_1.png" alt="Project 6">
+            </div>
+            <h3>Ejercicio Practico 1</h3>
+            <p>Una pyme (SUCESOS y MÁS) contrata servicios profesionales.
+
+El proyecto requiere una solución desde cero utilizando PHP y otras tecnologías.</p>
+            <a href="proyectos/ejercicio_practico1.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/investigasion3.png" alt="Project 7">
+            </div>
+            <h3>Investigacion 3</h3>
+            <p>Base de Datos (MariaDB / MySQL) con PHP: conceptos y requerimientos.</p>
+            <a href="proyectos/Investigacion 3 (1).pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/taller_practico3.png" alt="Project 8">
+            </div>
+            <h3>Taller Practico 3</h3>
+            <p>Una empresa familiar (CHINOS CAFE) contrata servicios profesionales para crear, 
+configurar y gestionar un sistema de información (web + MySQL Server) 
+para administrar sus datos.</p>
+            <a href="proyectos/taller_practico3.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+
+        <div class="caja-proyecto">
+            <div class="imagen-proyecto">
+                <img src="assets/parcial2.png" alt="Project 9">
+            </div>
+            <h3>Examen Parcial 3</h3>
+            <p>Una pyme (NIBARRA) contrata servicios profesionales para el desarrollo de 
+una solución web: un sistema de mantenimiento creado desde cero 
+utilizando los conceptos y técnicas vistas en el curso.</p>
+            <a href="proyectos/parcial2.pdf" target="_blank" class="btn-detalles">Ver Detalles</a>
+        </div>
+        
+    </div>
+</section>
+    
+<section class="certificados" id="certificados">
+    <h2 class="titulo-seccion">Certificados</h2>
+    <div class="contenedor-certificados">
+        
+        <div class="caja-certificado">
+            <div class="certificado-visual">
+                <img src="assets/certificate5.png" alt="Certificado 1">
+            </div>
+            <div class="certificado-info">
+                <h3>Certificado 1: IA Aplicada</h3> 
+                <p>Uso de IA en la Construcción de Datos (AluraLatam-Oracle)</p>
+                <a href="credenciales/certificado1.pdf" target="_blank" class="boton-ver">Ver Credencial</a>
+            </div>
+        </div>
+
+        <div class="caja-certificado">
+            <div class="certificado-visual">
+                <img src="assets/iee.png" alt="Certificado 2">
+            </div>
+            <div class="certificado-info">
+                <h3>Certificado 2: Participación IEEE</h3> 
+                <p>Taller de Innovación Tecnológica (IEEE)</p>
+                <a href="credenciales/certificado2.pdf" target="_blank" class="boton-ver">Ver Credencial</a>
+            </div>
+        </div>
+        
+        <div class="caja-certificado">
+            <div class="certificado-visual">
+                <img src="assets/certificate3.png" alt="Certificado 3">
+            </div>
+            <div class="certificado-info">
+                <h3>Certificado 3: Visualización de Datos</h3> 
+                <p>Creación de Gráficos con Python (AluraLatam-Oracle)</p>
+                <a href="credenciales/certificado3.pdf" target="_blank" class="boton-ver">Ver Credencial</a>
+            </div>
+        </div>
+        
+        <div class="caja-certificado">
+            <div class="certificado-visual">
+                <img src="assets/certificate4.png" alt="Certificado 4">
+            </div>
+            <div class="certificado-info">
+                <h3>Certificado 4: Datos con Python</h3> 
+                <p>Semana carrera tech (Alura Latam)</p>
+                <a href="credenciales/certificado4.pdf" target="_blank" class="boton-ver">Ver Credencial</a>
+            </div>
+        </div>
+        
+        <div class="caja-certificado">
+            <div class="certificado-visual">
+                <img src="assets/hackaton.png" alt="Certificado 5">
+            </div>
+            <div class="certificado-info">
+                <h3>Certificado 5: Hackathon Copa Airlines 2025</h3> 
+                <p>Data analítica e inteligencia artificial</p>
+                <a href="credenciales/Hackathon2025_.pdf" target="_blank" class="boton-ver">Ver Credencial</a>
+            </div>
+        </div>
+        
+        <div class="caja-certificado">
+            <div class="certificado-visual">
+                <img src="assets/certificate6.png" alt="Certificado 6">
+            </div>
+            <div class="certificado-info">
+                <h3>Certificado 6: Curso Libreria Pandas</h3> 
+                <p> Curso Pandas: transformación y manipulación de datos (AluraLatam-Oracle)</p>
+                <a href="credenciales/certificado6.pdf" target="_blank" class="boton-ver">Ver Credencial</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="contacto" id="contacto">
+    <h2 class="titulo-seccion">Contáctame</h2>
+    
+    <div class="contenedor-contacto-fila">
+        
+        <div class="info-contacto-caja">
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>gaitanyohann@gmail.com</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Teléfono</h4>
+                <p>+507 68380178</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Ubicación</h4>
+                <p>David, Panamá</p>
+            </div>
+
+            <div class="social-media-contacto">
+                <a href="https://github.com/yohangaitan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yojan-gaitan-08256a2b1/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/yohang23_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <form action="mailto:gaitanyohann@gmail.com" method="GET" enctype="text/plain" id="contact-form" class="formulario-contacto">
+            
+            <div class="entrada-cajas">
+                <input type="text" name="Nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="Correo" placeholder="Correo Electrónico" required>
+            </div>
+            <input type="text" name="subject" placeholder="Asunto" required>
+            <textarea name="body" cols="30" rows="10" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit" class="btn-inverso">Enviar Mensaje</button>
+        </form>
+
+    </div>
+</section>
+
+    <footer class="footer">
+        <p>© 2025 Yohan Gaitan. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
