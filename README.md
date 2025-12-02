@@ -39,4 +39,4 @@ El desarrollo de los trabajos abarcó una amplia gama de tecnologías fundamenta
 
 Puedes acceder a la versión final del portafolio en vivo a través de GitHub Pages:
 
-**[VER PORTAFOLIO PUBLICADO AQUÍ](https://yohangaitan.github.io/portafolio-DSWIV/)**
+**[VER PORTAFOLIO PUBLICADO AQUÍ](https://yohangaitan.github.io/yohan-gaitan-portafolio/)**
